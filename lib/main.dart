@@ -19,6 +19,20 @@ class Scorecard extends StatefulWidget {
 }
 
 class _ScorecardState extends State<Scorecard> {
+  int num = 0;
+
+  void incnum() => setState(() {
+        num++;
+      });
+
+  void decnum() => setState(() {
+        num--;
+      });
+
+  void resetnum() => setState(() {
+        num = 0;
+      });
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +52,7 @@ class _ScorecardState extends State<Scorecard> {
           SizedBox(height: 25),
           Center(
             child: Text(
-              "0",
+              num.toString(),
               style: TextStyle(
                   color: Colors.indigoAccent[700],
                   fontSize: 125,
@@ -52,7 +66,7 @@ class _ScorecardState extends State<Scorecard> {
             children: [
               RaisedButton(
                   color: Colors.red,
-                  onPressed: () {},
+                  onPressed: incnum,
                   child: Text(
                     "Increase",
                     style: TextStyle(color: Colors.black),
@@ -62,7 +76,7 @@ class _ScorecardState extends State<Scorecard> {
               ),
               RaisedButton(
                   color: Colors.blue,
-                  onPressed: () {},
+                  onPressed: decnum,
                   child: Text(
                     "Decrease",
                     style: TextStyle(color: Colors.black),
@@ -72,7 +86,7 @@ class _ScorecardState extends State<Scorecard> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: resetnum,
         child: Icon(Icons.refresh),
       ),
     );
