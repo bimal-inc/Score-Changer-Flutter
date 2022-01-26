@@ -40,8 +40,8 @@ class _ScorecardState extends State<Scorecard> {
             child: Text(
               "0",
               style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 60,
+                  color: Colors.indigoAccent[700],
+                  fontSize: 125,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Pacifico'),
             ),
@@ -70,6 +70,10 @@ class _ScorecardState extends State<Scorecard> {
             ],
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.refresh),
       ),
     );
   }
